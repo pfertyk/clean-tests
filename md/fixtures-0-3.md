@@ -9,7 +9,7 @@ def test_cannot_allocate_overlapping_seats(self):
     self.assertEqual(response.data, {'errors': [
         {},
         {},
-        {"You can't create duplicate items."},
+        {'You cannot create duplicate items.'},
         {},
     ]})
 ```
