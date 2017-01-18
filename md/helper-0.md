@@ -4,7 +4,7 @@ def test_allocating_tickets(self):
 
 def test_allocating_tickets_admin(self):
     tickets = self._validate_tickets(False)
-    self.assertIsNone(tickets)
+    self.assertEqual(tickets, [])
 
 def test_filter_past_tickets(self):
     self._validate_tickets()
