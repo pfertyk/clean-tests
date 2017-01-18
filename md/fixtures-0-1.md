@@ -8,5 +8,5 @@ def test_cannot_allocate_overlapping_seats(self):
 
     response = self.allocate_tickets(seller, seat_ranges)
 
-    self.assertEqual(response.status_code, HTTP_400)
+    self.assertEqual(response.status_code, HTTP_422)
 ```
