@@ -2,13 +2,13 @@
 from freezegun import freeze_time
 
 def test_view_tickets_for_past_events(self):
-    with freeze_time(2000-01-01):
+    with freeze_time(2000):
         event_past = test_helpers.save_event()
         test_helpers.add_tickets(event_past)
-    with freeze_time(3000-01-01):
+    with freeze_time(3000):
         event_upcoming = test_helpers.save_event()
         test_helpers.add_tickets(event_upcoming)
-    with freeze_time(2500-01-01):
+    with freeze_time(2500):
         response = self.call_api('/tickets/past')
 
     self.assertEqual(len(response.data), 1)
