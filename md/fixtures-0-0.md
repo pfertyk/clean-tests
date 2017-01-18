@@ -1,6 +1,6 @@
 ```python
 def test_cannot_allocate_overlapping_seats(self):
-    seller = self.create_ticket_seller(
+    seller = test_helpers.create_ticket_seller(
         name='Frank', surname='Sinatra', age='33')
     seat_ranges = [
         Range(34, 84, section='Balcony', block='B1'),

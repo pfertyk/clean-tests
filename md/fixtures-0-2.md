@@ -1,6 +1,6 @@
 ```python
 def test_cannot_allocate_overlapping_seats(self):
-    seller = self.create_ticket_seller()
+    seller = test_helpers.create_ticket_seller()
     seat_ranges = [Range(1, 2), Range(2, 3)]
 
     response = self.allocate_tickets(seller, seat_ranges)
