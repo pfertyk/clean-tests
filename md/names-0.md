@@ -8,5 +8,5 @@ def test_event_error(self):
 
     response = self.create_event(event_data)
 
-    self.assertEquals(response.status_code, HTTP_422)
+    self.assertEqual(response.status_code, HTTP_422)
 ```
