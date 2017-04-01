@@ -52,3 +52,9 @@ section.has-dark-background {
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
+
+section.stx-title {
+	&, h1, h2, h3, h4, h5, h6, p {
+		color: #fff;
+	}
+}

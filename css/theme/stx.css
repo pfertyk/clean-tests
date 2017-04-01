@@ -291,3 +291,6 @@ body {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+section.stx-title, section.stx-title h1, section.stx-title h2, section.stx-title h3, section.stx-title h4, section.stx-title h5, section.stx-title h6, section.stx-title p {
+  color: #fff; }
