@@ -1,16 +1,16 @@
 ```python
-def test_view_tickets_for_past_events(self):
-    event_past = test_helpers.save_event()
-    test_helpers.allocate_ticket(event_past)
-    event_past.start = timezone.now() - timedelta(days=3)
-    event_past.end = timezone.now() - timedelta(days=2)
-    event_past.save()
+def test_view_sellers_for_past_transactions(self):
+    past_transaction = helpers.create_transaction()
+    helpers.add_seller(past_transaction)
+    # we cannot add sellers for past transactions
+    past_transaction.date = tz.now() - timedelta(days=3)
+    past_transaction.save()
+    upcoming_transaction = helpers.create_transaction()
+    helpers.add_seller(upcoming_transaction)
 
-    event_upcoming = test_helpers.save_event()
-    test_helpers.allocate_ticket(event_upcoming)
-
-    response = self.call_api('/tickets/past')
+    response = self.call_api('/sellers/past')
 
     self.assertEqual(len(response.data), 1)
-    self.assertEqual(response.data[0]['event'], event_past)
+    self.assertEqual(
+        response.data[0]['transaction'], past_transaction)
 ```

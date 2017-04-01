@@ -1,16 +1,14 @@
 ```python
-def test_create_event_invalid_request(self):
-    organization = test_helpers.create_organization()
-    event_data = {
-        'name': 'Iron Maiden concert',
-        'organization': organization,
+def test_transaction_creation_error(self):
+    transaction_data = {
+        'organization': 'Wayne Industries',
     }
 
-    response = self.create_event(event_data)
+    response = self.create_transaction(transaction_data)
 
     self.assertEqual(response.status_code, HTTP_422)
     self.assertEqual(
         response.data['message'],
-        'You cannot create an event without a venue.'
+        'You need to specify the amount.'
     )
 ```
