@@ -1,9 +1,9 @@
 ```python
-def test_cannot_allocate_overlapping_seats(self):
+def test_sell_same_stock_twice_in_one_transaction(self):
     seller = test_helpers.create_ticket_seller()
-    seat_ranges = [Range(1, 2), Range(2, 3)]
+    stocks = [Stock(stock_id=1), Stock(stock_id=1)]
 
-    response = self.allocate_tickets(seller, seat_ranges)
+    response = self.sell_stocks(seller, stocks)
 
     self.assertEqual(response.status_code, HTTP_422)
 ```

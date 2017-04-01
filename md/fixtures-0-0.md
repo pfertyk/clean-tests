@@ -1,13 +1,14 @@
 ```python
-def test_cannot_allocate_overlapping_seats(self):
-    seller = test_helpers.create_ticket_seller(
-        name='Frank', surname='Sinatra', age='33')
-    seat_ranges = [
-        Range(34, 84, section='Balcony', block='B1'),
-        Range(56, 95, section='Balcony', block='B1'),
+def test_sell_same_stock_twice_in_one_transaction(self):
+    seller = test_helpers.create_seller(
+        name='Frank', surname='Sinatra', age='33'
+    )
+    stocks = [
+        Stock(stock_id=35, no_of_shares=45, comment='First'),
+        Stock(stock_id=35, no_of_shares=34, comment='Second')
     ]
 
-    response = self.allocate_tickets(seller, seat_ranges)
+    response = self.sell_stocks(seller, stocks)
 
     self.assertEqual(response.status_code, HTTP_422)
 ```
