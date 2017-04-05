@@ -1,5 +1,5 @@
 ```python
-def test_sell_same_stock_twice_in_one_transaction(self):
+def test_cannot_sell_stock_twice_in_one_transaction(self):
     seller = test_helpers.create_seller()
     stocks = [
         Stock(stock_id=35, no_of_shares=45, comment='First'),
